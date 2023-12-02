@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header('Location: dashboard.php');
     } else {
         echo 'Incorrect username and/or password!';
-        header('Refresh: 2; URL=login.php'); // Redirect to the Login Page after 2 seconds
+        header('Refresh: 2; URL=login.php'); 
     }
 }
 ?>

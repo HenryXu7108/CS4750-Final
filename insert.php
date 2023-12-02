@@ -5,7 +5,6 @@
     <title>Add a Transaction</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Inline CSS to ensure the elements are hidden as soon as the HTML is parsed */
         .fields, #submitBtn {
             display: none;
         }
