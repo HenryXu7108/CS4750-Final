@@ -12,4 +12,5 @@ echo "<p><a href='logout.php'>Logout</a></p>";
 ?>
 
 <a href="insert.php">Click to insert a record</a>
+<a href="addAccount/addAccount.php">Click to add an account</a>
 
