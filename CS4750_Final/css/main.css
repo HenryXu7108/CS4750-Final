@@ -1,0 +1,51 @@
+fieldset {
+    border: 2px solid #000;
+    box-sizing: border-box;
+    width: 40%;
+    margin-top: 25px;
+    border-radius: 25px;
+    height: 100px;
+}
+.filter {
+    float: right;
+    margin-bottom: 10px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+.table th {
+    background-color: #f2f2f2;
+}
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #45a049;
+}
