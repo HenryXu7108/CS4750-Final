@@ -11,7 +11,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 
-if (isset($_POST['investment_id'], $_POST['amount_invested'], $_POST['investment_date'], $_POST['maturity_date'], $_POST['current_value'], $_POST['rate_of_return'], $_POST['description'])) {
+if (isset($_POST['investment_id'], $_POST['amount_invested'],$_POST['investment_type'], $_POST['investment_date'], $_POST['maturity_date'], $_POST['current_value'], $_POST['rate_of_return'], $_POST['description'])) {
     //investment_type, amount_invested, investment_date, maturity_date, current_value, rate_of_return, description
 
     $investment_id = $_POST['investment_id'];
@@ -21,6 +21,7 @@ if (isset($_POST['investment_id'], $_POST['amount_invested'], $_POST['investment
     $current_value = $_POST['current_value'];
     $rate_of_return = $_POST['rate_of_return'];
     $description = $_POST['description'];
+    $investment_type = $_POST['investment_type'];
 
     $dateObject = DateTime::createFromFormat('Y-m-d', $investment_date);
     if (!$dateObject || $dateObject->format('Y-m-d') !== $investment_date) {
@@ -50,7 +51,7 @@ if (isset($_POST['investment_id'], $_POST['amount_invested'], $_POST['investment
 
 
     // Update the database
-    $stmt = $db->prepare("UPDATE Investment SET amount_invested = :amount_invested, maturity_date = :maturity_date, investment_date = :investment_date, current_value = :current_value, rate_of_return = :rate_of_return, description = :description WHERE investment_id = :investment_id");
+    $stmt = $db->prepare("UPDATE Investment SET investment_type=:investment_type, amount_invested = :amount_invested, maturity_date = :maturity_date, investment_date = :investment_date, current_value = :current_value, rate_of_return = :rate_of_return, description = :description WHERE investment_id = :investment_id");
 
     $stmt->bindParam(':amount_invested', $amount_invested);
     $stmt->bindParam(':investment_id', $investment_id);
@@ -59,6 +60,7 @@ if (isset($_POST['investment_id'], $_POST['amount_invested'], $_POST['investment
     $stmt->bindParam(':current_value', $current_value);
     $stmt->bindParam(':rate_of_return', $rate_of_return);
     $stmt->bindParam(':description', $description);
+    $stmt->bindParam(':investment_type', $investment_type);
 
     if ($stmt->execute()) {
         $_SESSION['message'] = "Record updated successfully. Going back to the table in 3 seconds.";
