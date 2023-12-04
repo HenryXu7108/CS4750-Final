@@ -67,9 +67,19 @@
         </select>
         <label for="accountCreationDate">Creation Date:</label>
         <input type="date" name="accountCreationDate">
-        <textarea name="incomeNotes" placeholder="Notes"></textarea>
+        <label for="addCard">Would you like to add a card?</label>
+        <select name="addCard" id="addCard">
+            <option value="NO">No</option>
+            <option value="YES">Yes</option>
+        </select>
+        <div id="cardDetails" style="display: none;">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" name="cardNumber" placeholder="Card Number">
+        </div>
+        <textarea name="AccountNotes" placeholder="Notes"></textarea>
         <button type="submit" id="submitBtn">Submit</button>
     </form>
 
+    <script src="script.js"></script>
 </body>
 </html>
