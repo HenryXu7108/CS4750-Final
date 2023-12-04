@@ -49,6 +49,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             </li>
 
             <li class="nav-item">
+                <a href="addBudget/addBudget.php" class="nav-link">Add Budget</a>
+            </li>
+
+            <li class="nav-item">
                 <a href="main.html" class="nav-link ">View Records</a>
             </li>
 

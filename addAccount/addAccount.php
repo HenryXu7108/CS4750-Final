@@ -31,6 +31,10 @@
                 </li>
 
                 <li class="nav-item">
+                    <a href="../addBudget/addBudget.php" class="nav-link">Add Budget</a>
+                 </li>
+
+                <li class="nav-item">
                     <a href="main.html" class="nav-link ">View Records</a>
                 </li>
 
@@ -63,9 +67,29 @@
         </select>
         <label for="accountCreationDate">Creation Date:</label>
         <input type="date" name="accountCreationDate">
-        <textarea name="incomeNotes" placeholder="Notes"></textarea>
+        <label for="addCard">Would you like to add a card?</label>
+        <select name="addCard" id="addCard">
+            <option value="NO">No</option>
+            <option value="YES">Yes</option>
+        </select>
+        <div id="cardDetails" style="display: none;">
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" name="cardNumber" placeholder="Card Number">
+            <select name="cardType" id="cardType">
+                <option value="DEBIT">Debit</option>
+                <option value="CREDIT">Credit</option>
+            </select>
+        </div>
+        <div id="creditCardDetails" style="display: none;">
+            <label for="creditLimit">Credit Limit:</label>
+            <input type="text" name="creditLimit">
+            <label for="interestRate">Interest Rate:</label>
+            <input type="text" name="interestRate">
+        </div>
+        <textarea name="AccountNotes" placeholder="Notes"></textarea>
         <button type="submit" id="submitBtn">Submit</button>
     </form>
 
+    <script src="script.js"></script>
 </body>
 </html>
