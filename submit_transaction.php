@@ -34,21 +34,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(6, $source, PDO::PARAM_STR);
         $stmt->execute();
 
-        //2nd Query: Update the Account Balance
-        $query = "UPDATE Account SET balance=:newBalance WHERE account_id = :accountId";
-        $stmt = $db->prepare($query);
+        // //2nd Query: Update the Account Balance
+        // $query = "UPDATE Account SET balance=:newBalance WHERE account_id = :accountId";
+        // $stmt = $db->prepare($query);
         
-        $oldAmountStmt = $db->prepare("SELECT balance FROM Account WHERE account_id = :account_id");
-        $oldAmountStmt->bindParam(':account_id', $account_id, PDO::PARAM_INT);
-        $oldAmountStmt->execute();
-        $oldBalance = $oldAmountStmt->fetchAll(PDO::FETCH_ASSOC)[0]['balance'];
-        //var_dump($oldBalance); //For Debugging Purpose
-        $newBalance = (float)$oldBalance+$amount;
-        $oldAmountStmt->closeCursor();
+        // $oldAmountStmt = $db->prepare("SELECT balance FROM Account WHERE account_id = :account_id");
+        // $oldAmountStmt->bindParam(':account_id', $account_id, PDO::PARAM_INT);
+        // $oldAmountStmt->execute();
+        // $oldBalance = $oldAmountStmt->fetchAll(PDO::FETCH_ASSOC)[0]['balance'];
+        // //var_dump($oldBalance); //For Debugging Purpose
+        // $newBalance = (float)$oldBalance+$amount;
+        // $oldAmountStmt->closeCursor();
 
-        $stmt->bindParam(':newBalance', $newBalance, PDO::PARAM_STR);
-        $stmt->bindParam(':accountId', $account_id, PDO::PARAM_INT);
-        $stmt->execute();
+        // $stmt->bindParam(':newBalance', $newBalance, PDO::PARAM_STR);
+        // $stmt->bindParam(':accountId', $account_id, PDO::PARAM_INT);
+        // $stmt->execute();
         $stmt->closeCursor();
 
         echo "New Income record created successfully and Account Balance Updated Succesfully";
