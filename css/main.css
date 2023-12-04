@@ -1,0 +1,108 @@
+
+.filter {
+    float: right;
+    margin-bottom: 10px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+/* General table styles */
+/* General table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+th, td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+/* Alternating row colors */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+/* Button styles */
+.button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Edit button specific styles */
+.edit-btn {
+    background-color: #ffc107; /* Bootstrap warning color */
+    color: #212529; /* Bootstrap dark color */
+}
+
+.edit-btn:hover {
+    background-color: #e0a800;
+}
+
+/* Delete button specific styles */
+.delete-btn {
+    background-color: #dc3545; /* Bootstrap danger color */
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Extra styles to improve overall page layout */
+.container {
+    padding: 20px;
+}
+
+/* Welcome message */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Adjusting navbar link colors for better visibility */
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255,.75);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255,255,255);
+}
+
+/* This will ensure that your navbar is at the top of the page */
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
