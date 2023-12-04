@@ -41,8 +41,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $db->prepare($cardQuery);
         $stmt->bindParam(1, $person_id, PDO::PARAM_INT);
         $stmt->bindParam(2, $card_number, PDO::PARAM_STR); 
-        $stmt->bindParam(3, $account_id, PDO::PARAM_STR);
+        $stmt->bindParam(3, $account_id, PDO::PARAM_INT);
         $stmt->execute();
+
+        $cardType = $_POST["cardType"];
+        if($cardType==="DEBIT"){
+            $cardQuery = "INSERT INTO Debit_Card (account_id) VALUES (?)";
+            $stmt = $db->prepare($cardQuery);
+            $stmt->bindParam(1, $account_id, PDO::PARAM_INT);
+            $stmt->execute();
+        }else if($cardType === "CREDIT"){
+            $cardQuery = "INSERT INTO Credit_Card (account_id,credit_limit,interest_rate) VALUES (?,?,?)";
+            $stmt = $db->prepare($cardQuery);
+            $credit_limit = $_POST["creditLimit"];
+            $interest_rate = $_POST["interestRate"];
+            $stmt->bindParam(1, $account_id, PDO::PARAM_INT);
+            $stmt->bindParam(2, $credit_limit, PDO::PARAM_STR); 
+            $stmt->bindParam(3, $interest_rate, PDO::PARAM_STR);
+            $stmt->execute();
+        }
 
         echo "New Account and Card records created successfully";
     }else{

@@ -75,6 +75,16 @@
         <div id="cardDetails" style="display: none;">
             <label for="cardNumber">Card Number:</label>
             <input type="text" name="cardNumber" placeholder="Card Number">
+            <select name="cardType" id="cardType">
+                <option value="DEBIT">Debit</option>
+                <option value="CREDIT">Credit</option>
+            </select>
+        </div>
+        <div id="creditCardDetails" style="display: none;">
+            <label for="creditLimit">Credit Limit:</label>
+            <input type="text" name="creditLimit">
+            <label for="interestRate">Interest Rate:</label>
+            <input type="text" name="interestRate">
         </div>
         <textarea name="AccountNotes" placeholder="Notes"></textarea>
         <button type="submit" id="submitBtn">Submit</button>
